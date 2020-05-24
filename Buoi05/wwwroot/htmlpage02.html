@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link href="summernote/summernote.css" rel="stylesheet" />
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <link href="limonte-sweetalert2/sweetalert2.css" rel="stylesheet" />
+    <script src="limonte-sweetalert2/sweetalert2.js"></script>
+    <link href="font-awesome/css/all.css" rel="stylesheet" />
+    <script src="font-awesome/js/all.js"></script>
+    <script src="summernote/summernote.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('textarea[name="ThongTinThem"]').summernote()
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#demo").click(function () {
+                Swal.fire({
+                    title: '<strong>HTML <u>example</u></strong>', icon: 'info', html: 'You can use <b>bold text</b>', showCloseButton: true, showCancelButtuon: true
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <span class="fa fa-address-book"></span>
+        <span class="fa fa-3x fa-user"></span>
+
+        <form action="/Home/About" method="post">
+            <h2 class="text-center text-uppercase">Dang ky Thanh vien</h2>
+            <div class="row">
+                <div class="col-3 text-right">
+                    Ho ten
+                </div>
+                <div class="col-9">
+                    <input class="form-control" name="HoTen" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 text-right">
+                    Mat Khau
+                </div>
+                <div class="col-9">
+                    <input name="MatKhau" type="password" class="form-control" />
+                </div>
+            </div>
+            <!-------------------radioButton---------------------->
+            <div class="row">
+                <div class="col-3 text-right">
+                    Gioi Tinh
+                </div>
+                <div class="col-9">
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="GioiTinh" value="0" checked="checked" class="form-check-input" />
+                        <label class="form-check-label" for="GTNu">Nu</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="GioiTinh" value="1" checked="checked" class="form-check-input" />
+                        <label class="form-check-label" for="GTNam">Nam</label>
+                    </div>
+                </div>
+            </div>
+            <!-------------------CheckBox---------------------->
+            <div class="row">
+                <div class="col-3 text-right">
+                    So Thich
+                </div>
+                <div class="col-9">
+                    <div class="form-check-inline">
+                        <input type="checkbox" name="SoThich" value="DL" class="form-check-input" />Du Lich
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="checkbox" name="SoThich" value="DS" class="form-check-input" />Doc Sach
+                    </div>
+                    <div class="form-check-inline">
+                        <input type="checkbox" name="SoThich" value="TT" class="form-check-input" />The Thao
+                    </div>
+                </div>
+            </div>
+            <!-------------------Form Group---------------------->
+            <div class="row">
+                <div class="col-3 text-right">
+                    Tinh Thanh
+                </div>
+                <div class="col-9 form-group">
+                    <select name="TinhThanh" class="form-control">
+                        <option value="HN">Ha Noi</option>
+                        <option value="CT">Can Tho</option>
+                        <option value="HP">Hai Phong</option>
+                        <option value="NT">Nha Trang</option>
+                        <option value="DN">Da Nang</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 text-right">
+                    Hinh
+                </div>
+                <div class="col-9 form-group">
+                    <input type="file" name="Hinh" required class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 text-right">
+                    Thong Tin Them
+                </div>
+                <div class="col-9">
+                    <textarea name="ThongTinThem" rows="5" class="form-control" /></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary">Dang Ky</button>
+                    <button class="btn btn-danger" type="reset">Nhap Lai</button>
+                </div>
+            </div>
+        </form>
+        <button type="button" id="demo">Sweet Alert</button>
+    </div>
+</body>
+</html>
